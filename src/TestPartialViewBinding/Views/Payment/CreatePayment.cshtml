@@ -1,0 +1,30 @@
+﻿@model TestPartialViewBinding.ViewModel.PaymentViewModel
+
+<form asp-action="CreatePayment">
+  <div class="form-horizontal">
+
+    <div class="form-group">
+      <label asp-for="Payment" class="col-md-2 control-label"></label>
+      <div class="col-md-2">
+        <input asp-for="Payment" class="form-control" type="number" />
+        <span asp-validation-for="Payment" class="text-danger" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Description" class="col-md-2 control-label"></label>
+      <div class="col-md-10">
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger" />
+      </div>
+    </div>
+
+
+    @foreach (var spItem in Model.SplittedPayment)
+    {
+      @Html.Partial("SplittedPaymentPartial", spItem);
+    }
+
+    <input type="submit" />
+  </div>
+</form>

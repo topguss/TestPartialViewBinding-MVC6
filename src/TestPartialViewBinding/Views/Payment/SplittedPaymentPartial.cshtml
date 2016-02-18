@@ -1,0 +1,14 @@
+﻿@model TestPartialViewBinding.ViewModel.SplittedPaymentViewModel
+
+<div class="form-group" name="SplittedPayment@(Model.SplittedPaymentId)" id="SplittedPayment@(Model.SplittedPaymentId)">
+  <label class="col-md-2 control-label">SplittedPayment[@(Model.SplittedPaymentId)]</label>
+  <input type="hidden" id="SplittedPayment[@(Model.SplittedPaymentId)].SplittedPaymentId" name="SplittedPayment[@(Model.SplittedPaymentId)].SplittedPaymentId" value="@(Model.SplittedPaymentId)" />
+  <div class="col-md-2">
+    <input class="form-control" type="number" asp-for="Payment" id="SplittedPayment[@(Model.SplittedPaymentId)].Payment" name="SplittedPayment[@(Model.SplittedPaymentId)].Payment" placeholder="Payment" required aria-describedby="SplittedPayment[@(Model.SplittedPaymentId)].Payment-error" />
+    <span class="text-danger" data-valmsg-for="SplittedPayment[@(Model.SplittedPaymentId)].Payment" asp-validation-for="Payment"></span>
+  </div>
+  <div class="col-md-2">
+    <input class="form-control" type="text" asp-for="Description" id="SplittedPayment[@(Model.SplittedPaymentId)].Description" name="SplittedPayment[@(Model.SplittedPaymentId)].Description" placeholder="Description" required aria-describedby="SplittedPayment[@(Model.SplittedPaymentId)].Description-error" />
+    <span class="text-danger" data-valmsg-for="SplittedPayment[@(Model.SplittedPaymentId)].Description" asp-validation-for="Description"></span>
+  </div>
+</div>
